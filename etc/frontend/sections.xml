@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * SomePlus Free Shipping Bar - Sections Configuration
+ * Defines which actions should invalidate the free-shipping-bar section
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Customer:etc/sections.xsd">
+    <!-- Cart modifications -->
+    <action name="checkout/cart/add">
+        <section name="free-shipping-bar"/>
+    </action>
+    <action name="checkout/cart/delete">
+        <section name="free-shipping-bar"/>
+    </action>
+    <action name="checkout/cart/updatePost">
+        <section name="free-shipping-bar"/>
+    </action>
+    <action name="checkout/cart/updateItemOptions">
+        <section name="free-shipping-bar"/>
+    </action>
+    <action name="checkout/cart/ajaxDelete">
+        <section name="free-shipping-bar"/>
+    </action>
+    <action name="checkout/cart/ajaxUpdate">
+        <section name="free-shipping-bar"/>
+    </action>
+
+    <!-- Coupon actions -->
+    <action name="checkout/cart/couponPost">
+        <section name="free-shipping-bar"/>
+    </action>
+
+    <!-- Checkout step changes -->
+    <action name="checkout/sidebar/removeItem">
+        <section name="free-shipping-bar"/>
+    </action>
+    <action name="checkout/sidebar/updateItemQty">
+        <section name="free-shipping-bar"/>
+    </action>
+</config>

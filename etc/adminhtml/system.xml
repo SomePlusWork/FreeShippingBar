@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * SomePlus Free Shipping Bar - Admin Configuration
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="someplus" translate="label" sortOrder="400">
+            <label>SomePlus</label>
+        </tab>
+        <section id="someplus_freeshippingbar" translate="label" type="text" sortOrder="10"
+                 showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Free Shipping Bar</label>
+            <tab>someplus</tab>
+            <resource>SomePlus_FreeShippingBar::config</resource>
+
+            <!-- General Settings -->
+            <group id="general" translate="label" type="text" sortOrder="10"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+
+                <field id="enabled" translate="label comment" type="select" sortOrder="10"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable or disable the free shipping progress bar.</comment>
+                </field>
+
+                <field id="threshold" translate="label comment" type="text" sortOrder="20"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Free Shipping Threshold</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                    <comment>Minimum cart subtotal for free shipping.</comment>
+                </field>
+
+                <field id="include_tax" translate="label comment" type="select" sortOrder="30"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Include Tax in Calculation</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Include tax when calculating cart subtotal.</comment>
+                </field>
+            </group>
+
+            <!-- Display Settings -->
+            <group id="display" translate="label" type="text" sortOrder="20"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Display Positions</label>
+
+                <field id="show_header" translate="label" type="select" sortOrder="10"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show in Header</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="show_minicart" translate="label" type="select" sortOrder="20"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show in Mini Cart</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="show_cart" translate="label" type="select" sortOrder="30"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show on Cart Page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field id="show_checkout" translate="label" type="select" sortOrder="40"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Show on Checkout</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+
+            <!-- Design Settings -->
+            <group id="design" translate="label" type="text" sortOrder="30"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Design Settings</label>
+
+                <field id="bar_color" translate="label" type="text" sortOrder="10"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Progress Bar Color</label>
+                    <frontend_model>SomePlus\FreeShippingBar\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <comment>Color of the progress fill (e.g., #10b981)</comment>
+                </field>
+
+                <field id="bg_color" translate="label" type="text" sortOrder="20"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Background Color</label>
+                    <frontend_model>SomePlus\FreeShippingBar\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <comment>Color of the progress track background</comment>
+                </field>
+
+                <field id="text_color" translate="label" type="text" sortOrder="30"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Text Color</label>
+                    <frontend_model>SomePlus\FreeShippingBar\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <comment>Color of the message text</comment>
+                </field>
+
+                <field id="achieved_color" translate="label" type="text" sortOrder="40"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Achievement Color</label>
+                    <frontend_model>SomePlus\FreeShippingBar\Block\Adminhtml\System\Config\ColorPicker</frontend_model>
+                    <comment>Color when free shipping is achieved</comment>
+                </field>
+            </group>
+
+            <!-- Message Settings -->
+            <group id="messages" translate="label comment" type="text" sortOrder="40"
+                   showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Messages</label>
+                <comment><![CDATA[Available placeholders: <strong>{{remaining}}</strong> (amount left), <strong>{{threshold}}</strong> (target amount), <strong>{{current}}</strong> (current cart total), <strong>{{percentage}}</strong> (progress %)]]></comment>
+
+                <field id="progress_message" translate="label" type="textarea" sortOrder="10"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Progress Message</label>
+                    <comment>Shown while cart is below threshold.</comment>
+                </field>
+
+                <field id="achieved_message" translate="label" type="textarea" sortOrder="20"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Achievement Message</label>
+                    <comment>Shown when free shipping is unlocked.</comment>
+                </field>
+
+                <field id="empty_cart_message" translate="label" type="textarea" sortOrder="30"
+                       showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Empty Cart Message</label>
+                    <comment>Shown when cart is empty.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

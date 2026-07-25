@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * SomePlus Free Shipping Bar - Dependency Injection
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- Customer Section Pool -->
+    <type name="Magento\Customer\CustomerData\SectionPoolInterface">
+        <arguments>
+            <argument name="sectionSourceMap" xsi:type="array">
+                <item name="free-shipping-bar" xsi:type="string">SomePlus\FreeShippingBar\CustomerData\FreeShippingBar</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

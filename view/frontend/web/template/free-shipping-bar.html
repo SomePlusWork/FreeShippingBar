@@ -1,0 +1,21 @@
+<!-- SomePlus Free Shipping Bar Template -->
+<div class="free-shipping-bar" data-bind="visible: isVisible(), css: getContainerClasses()">
+    <!-- Progress Track -->
+    <div class="fsb-progress-wrapper">
+        <div class="fsb-progress-track" data-bind="style: { backgroundColor: getBgColor() }">
+            <div class="fsb-progress-fill"
+                 data-bind="style: {
+                     width: getProgressWidth(),
+                     backgroundColor: getBarColor()
+                 }">
+            </div>
+        </div>
+        <!-- Percentage indicator -->
+        <span class="fsb-percentage" data-bind="text: getPercentage() + '%', visible: getPercentage() > 0"></span>
+    </div>
+
+    <!-- Message -->
+    <p class="fsb-message"
+       data-bind="html: getMessage(), style: { color: getTextColor() }">
+    </p>
+</div>

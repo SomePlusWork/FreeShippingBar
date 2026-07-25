@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * SomePlus Free Shipping Bar - Default Layout (Header + Minicart)
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- Header Free Shipping Bar -->
+        <referenceContainer name="header.container">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="free.shipping.bar.header"
+                   template="SomePlus_FreeShippingBar::free-shipping-bar.phtml"
+                   before="-">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="free-shipping-bar-header" xsi:type="array">
+                                <item name="component" xsi:type="string">SomePlus_FreeShippingBar/js/free-shipping-bar</item>
+                                <item name="config" xsi:type="array">
+                                    <item name="position" xsi:type="string">header</item>
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+
+        <!-- Minicart Free Shipping Bar -->
+        <referenceBlock name="minicart">
+            <arguments>
+                <argument name="jsLayout" xsi:type="array">
+                    <item name="components" xsi:type="array">
+                        <item name="minicart_content" xsi:type="array">
+                            <item name="children" xsi:type="array">
+                                <item name="extra_info" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                        <item name="free-shipping-bar-minicart" xsi:type="array">
+                                            <item name="component" xsi:type="string">SomePlus_FreeShippingBar/js/free-shipping-bar</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="position" xsi:type="string">minicart</item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+    </body>
+</page>

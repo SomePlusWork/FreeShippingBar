@@ -1,0 +1,165 @@
+/**
+ * SomePlus Free Shipping Bar - Styles
+ */
+
+// Variables
+@fsb-transition-duration: 0.5s;
+@fsb-track-height: 10px;
+@fsb-track-border-radius: 5px;
+
+// Main container
+.free-shipping-bar {
+    padding: 12px 16px;
+    margin: 0;
+    font-family: inherit;
+
+    // Header position - sticky bar
+    &.fsb-position-header {
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        border-bottom: 1px solid #e2e8f0;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    // Minicart position
+    &.fsb-position-minicart {
+        padding: 10px 12px;
+        border-top: 1px solid #e5e7eb;
+        margin-top: 10px;
+    }
+
+    // Cart page position
+    &.fsb-position-cart {
+        background: #f8fafc;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        border: 1px solid #e2e8f0;
+    }
+
+    // Checkout position
+    &.fsb-position-checkout {
+        background: #f0fdf4;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #bbf7d0;
+    }
+
+    // Achieved state
+    &.fsb-achieved {
+        .fsb-progress-fill {
+            animation: fsb-celebrate 0.6s ease-out;
+        }
+
+        .fsb-message {
+            animation: fsb-bounce 0.5s ease-out;
+        }
+    }
+}
+
+// Progress wrapper
+.fsb-progress-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+// Progress track (background)
+.fsb-progress-track {
+    flex: 1;
+    height: @fsb-track-height;
+    border-radius: @fsb-track-border-radius;
+    overflow: hidden;
+    position: relative;
+}
+
+// Progress fill (foreground)
+.fsb-progress-fill {
+    height: 100%;
+    border-radius: @fsb-track-border-radius;
+    transition: width @fsb-transition-duration ease-out, background-color 0.3s ease;
+    position: relative;
+
+    // Shine effect
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.3) 50%,
+            transparent 100%
+        );
+        animation: fsb-shine 2s infinite;
+    }
+}
+
+// Percentage indicator
+.fsb-percentage {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    min-width: 35px;
+    text-align: right;
+}
+
+// Message
+.fsb-message {
+    margin: 8px 0 0;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+
+    strong {
+        font-weight: 700;
+    }
+}
+
+// Animations
+@keyframes fsb-celebrate {
+    0% {
+        transform: scaleX(0.95);
+    }
+    50% {
+        transform: scaleX(1.02);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+@keyframes fsb-bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes fsb-shine {
+    0% {
+        transform: translateX(-100%);
+    }
+    50%, 100% {
+        transform: translateX(100%);
+    }
+}
+
+// Mobile responsive
+@media (max-width: 768px) {
+    .free-shipping-bar {
+        padding: 10px 12px;
+
+        .fsb-message {
+            font-size: 13px;
+        }
+    }
+
+    .fsb-percentage {
+        display: none;
+    }
+}

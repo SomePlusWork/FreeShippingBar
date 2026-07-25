@@ -1,0 +1,21 @@
+<?php
+/**
+ * SomePlus Free Shipping Bar - PHTML Template
+ *
+ * @var \Magento\Framework\View\Element\Template $block
+ */
+
+$jsLayout = $block->getJsLayout();
+$componentName = 'free-shipping-bar-' . uniqid();
+?>
+<div id="<?= $block->escapeHtmlAttr($componentName) ?>"
+     data-bind="scope: '<?= $block->escapeJs(array_key_first(json_decode($jsLayout, true)['components'] ?? [])) ?>'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<script type="text/x-magento-init">
+    {
+        "#<?= $block->escapeJs($componentName) ?>": {
+            "Magento_Ui/js/core/app": <?= /* @noEscape */ $jsLayout ?>
+        }
+    }
+</script>

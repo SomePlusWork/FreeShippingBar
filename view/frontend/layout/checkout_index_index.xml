@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * SomePlus Free Shipping Bar - Checkout Page Layout
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- Checkout Page Free Shipping Bar -->
+        <referenceContainer name="content">
+            <block class="Magento\Framework\View\Element\Template"
+                   name="free.shipping.bar.checkout"
+                   template="SomePlus_FreeShippingBar::free-shipping-bar.phtml"
+                   before="-">
+                <arguments>
+                    <argument name="jsLayout" xsi:type="array">
+                        <item name="components" xsi:type="array">
+                            <item name="free-shipping-bar-checkout" xsi:type="array">
+                                <item name="component" xsi:type="string">SomePlus_FreeShippingBar/js/free-shipping-bar</item>
+                                <item name="config" xsi:type="array">
+                                    <item name="position" xsi:type="string">checkout</item>
+                                </item>
+                            </item>
+                        </item>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

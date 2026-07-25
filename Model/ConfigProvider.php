@@ -23,7 +23,7 @@ class ConfigProvider
     /**
      * @var ScopeConfigInterface
      */
-    private ScopeConfigInterface $scopeConfig;
+    protected ScopeConfigInterface $scopeConfig;
 
     /**
      * @param ScopeConfigInterface $scopeConfig

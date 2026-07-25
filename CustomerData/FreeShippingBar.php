@@ -23,12 +23,12 @@ class FreeShippingBar implements SectionSourceInterface
     /**
      * @var ConfigProvider
      */
-    private ConfigProvider $configProvider;
+    protected ConfigProvider $configProvider;
 
     /**
      * @var ProgressCalculator
      */
-    private ProgressCalculator $progressCalculator;
+    protected ProgressCalculator $progressCalculator;
 
     /**
      * @param ConfigProvider $configProvider

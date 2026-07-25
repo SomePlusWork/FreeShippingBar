@@ -21,17 +21,17 @@ class ProgressCalculator
     /**
      * @var CheckoutSession
      */
-    private CheckoutSession $checkoutSession;
+    protected CheckoutSession $checkoutSession;
 
     /**
      * @var ConfigProvider
      */
-    private ConfigProvider $configProvider;
+    protected ConfigProvider $configProvider;
 
     /**
      * @var PriceCurrencyInterface
      */
-    private PriceCurrencyInterface $priceCurrency;
+    protected PriceCurrencyInterface $priceCurrency;
 
     /**
      * @param CheckoutSession $checkoutSession
@@ -56,6 +56,7 @@ class ProgressCalculator
     public function calculate(): array
     {
         $threshold = $this->configProvider->getThreshold();
+        /** @var \Magento\Quote\Model\Quote $quote */
         $quote = $this->checkoutSession->getQuote();
 
         // Get cart subtotal

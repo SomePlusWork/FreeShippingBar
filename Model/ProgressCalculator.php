@@ -56,7 +56,7 @@ class ProgressCalculator
     public function calculate(): array
     {
         $threshold = $this->configProvider->getThreshold();
-        /** @var \Magento\Quote\Model\Quote $quote */
+        /** @var \Magento\Quote\Model\Quote|null $quote */
         $quote = $this->checkoutSession->getQuote();
 
         // Get cart subtotal

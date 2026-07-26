@@ -35,6 +35,9 @@ class ConfigProvider
 
     /**
      * Check if module is enabled
+     *
+     * @param string|null $storeId
+     * @return bool
      */
     public function isEnabled(?string $storeId = null): bool
     {
@@ -47,6 +50,9 @@ class ConfigProvider
 
     /**
      * Get free shipping threshold amount
+     *
+     * @param string|null $storeId
+     * @return float
      */
     public function getThreshold(?string $storeId = null): float
     {
@@ -59,6 +65,9 @@ class ConfigProvider
 
     /**
      * Check if tax should be included in calculation
+     *
+     * @param string|null $storeId
+     * @return bool
      */
     public function isIncludeTax(?string $storeId = null): bool
     {
@@ -71,6 +80,9 @@ class ConfigProvider
 
     /**
      * Check if bar should show in header
+     *
+     * @param string|null $storeId
+     * @return bool
      */
     public function isShowInHeader(?string $storeId = null): bool
     {
@@ -83,6 +95,9 @@ class ConfigProvider
 
     /**
      * Check if bar should show in mini cart
+     *
+     * @param string|null $storeId
+     * @return bool
      */
     public function isShowInMinicart(?string $storeId = null): bool
     {
@@ -95,6 +110,9 @@ class ConfigProvider
 
     /**
      * Check if bar should show on cart page
+     *
+     * @param string|null $storeId
+     * @return bool
      */
     public function isShowInCart(?string $storeId = null): bool
     {
@@ -107,6 +125,9 @@ class ConfigProvider
 
     /**
      * Check if bar should show on checkout
+     *
+     * @param string|null $storeId
+     * @return bool
      */
     public function isShowInCheckout(?string $storeId = null): bool
     {
@@ -119,6 +140,9 @@ class ConfigProvider
 
     /**
      * Get progress bar fill color
+     *
+     * @param string|null $storeId
+     * @return string
      */
     public function getBarColor(?string $storeId = null): string
     {
@@ -131,6 +155,9 @@ class ConfigProvider
 
     /**
      * Get progress bar background color
+     *
+     * @param string|null $storeId
+     * @return string
      */
     public function getBgColor(?string $storeId = null): string
     {
@@ -143,6 +170,9 @@ class ConfigProvider
 
     /**
      * Get message text color
+     *
+     * @param string|null $storeId
+     * @return string
      */
     public function getTextColor(?string $storeId = null): string
     {
@@ -155,6 +185,9 @@ class ConfigProvider
 
     /**
      * Get achievement bar color
+     *
+     * @param string|null $storeId
+     * @return string
      */
     public function getAchievedColor(?string $storeId = null): string
     {
@@ -167,6 +200,9 @@ class ConfigProvider
 
     /**
      * Get progress message template
+     *
+     * @param string|null $storeId
+     * @return string
      */
     public function getProgressMessage(?string $storeId = null): string
     {
@@ -179,6 +215,9 @@ class ConfigProvider
 
     /**
      * Get achievement message template
+     *
+     * @param string|null $storeId
+     * @return string
      */
     public function getAchievedMessage(?string $storeId = null): string
     {
@@ -191,6 +230,9 @@ class ConfigProvider
 
     /**
      * Get empty cart message template
+     *
+     * @param string|null $storeId
+     * @return string
      */
     public function getEmptyCartMessage(?string $storeId = null): string
     {
@@ -203,6 +245,9 @@ class ConfigProvider
 
     /**
      * Get all display positions as array
+     *
+     * @param string|null $storeId
+     * @return array
      */
     public function getEnabledPositions(?string $storeId = null): array
     {
@@ -226,6 +271,9 @@ class ConfigProvider
 
     /**
      * Get all design settings as array
+     *
+     * @param string|null $storeId
+     * @return array
      */
     public function getDesignSettings(?string $storeId = null): array
     {

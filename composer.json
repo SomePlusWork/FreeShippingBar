@@ -1,7 +1,7 @@
 {
     "name": "someplus/module-free-shipping-bar",
     "description": "Magento 2 Free Shipping Progress Bar - Motivate customers to reach free shipping threshold with a dynamic progress bar displayed in header, mini cart, cart page, and checkout.",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "type": "magento2-module",
     "license": [
         "proprietary"
